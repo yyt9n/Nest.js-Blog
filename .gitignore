@@ -4,7 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-/nextjs-blog-sanity
 
 # testing
 /coverage
@@ -35,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sanity studio app
+/nextjs-blog-sanity/config
+/nextjs-blog-sanity/node_modules
+/nextjs-blog-sanity/plugins
+/nextjs-blog-sanity/.eslintrc
