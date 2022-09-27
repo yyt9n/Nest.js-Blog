@@ -1,13 +1,11 @@
 
-import { Container, Row, Col, Media, Image, Card } from 'react-bootstrap';
-import Navbar from 'components/Navbar';
+import { Row, Col, Media, Image, Card } from 'react-bootstrap';
+import PageLayout from 'components/PageLayout';
 
 export default function Home() {
 
   return (
-    <Container>
-      <Navbar />
-      <div className='blog-detail-page'>
+    <PageLayout>
         <Row>
           <Col md="8">
             {/* AUTHOR INTRO STARTS */}
@@ -32,8 +30,6 @@ export default function Home() {
           </Col>
         </Row>
         <hr/>
-        {/* className from props */}
-        <div className={`page-wrapper`}>
           <Row className="mb-5">
             <Col md="10">
               {/* CardListItem STARTS */}
@@ -97,15 +93,6 @@ export default function Home() {
               </Card>
             </Col>
           </Row>
-        </div>
-      </div>
-      <footer className="page-footer">
-        <div>
-          <a href="#">courses</a>{' | '}
-          <a href="#">github</a>{' | '}
-          <a href="#">facebook</a>
-        </div>
-      </footer>
-    </Container>
+    </PageLayout>
   )
 }
