@@ -7,5 +7,18 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   name: 'default',
-  types: schemaTypes.concat([]),
+  types: schemaTypes.concat([
+    {
+      name: 'blog',
+      type: 'document',
+      title: 'Blog',
+      fields: [
+        {
+          name: 'title',
+          type: 'string',
+          title: 'Title'
+        }
+      ],
+    }
+  ]),
 })
