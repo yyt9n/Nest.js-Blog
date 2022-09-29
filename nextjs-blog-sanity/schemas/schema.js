@@ -17,6 +17,16 @@ export default createSchema({
           name: 'title',
           type: 'string',
           title: 'Title'
+        },
+        {
+          name: 'subtitle',
+          type: 'string',
+          title: 'Subtitle',
+        },
+        {
+          name: 'slug',
+          type: 'slug',
+          title: 'Slug',
         }
       ],
     }
