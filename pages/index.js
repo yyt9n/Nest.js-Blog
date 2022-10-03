@@ -6,6 +6,7 @@ import CardItem from 'components/CardItem';
 import CardListItem from 'components/CardListItem';
 
 import { getAllBlogs } from 'lib/api';
+import { BLOCKED_PAGES } from 'next/dist/shared/lib/constants';
 
 export default function Home({blogs}) {
   // debugger
@@ -23,6 +24,8 @@ export default function Home({blogs}) {
               <CardItem
                 title={blog.title}
                 subtitle={blog.subtitle}
+                date={blog.date}
+                image={blog.coverImage}
               />
             </Col>
             )
@@ -33,9 +36,6 @@ export default function Home({blogs}) {
   )
 }
 
-// This function is called during the build (build time)
-// Provides props to your page
-// It will create static page
 export async function getStaticProps() {
   const blogs = await getAllBlogs();
   return {
