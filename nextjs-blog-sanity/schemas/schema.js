@@ -33,7 +33,8 @@ export default createSchema({
         {
           name: 'title',
           type: 'string',
-          title: 'Title'
+          title: 'Title',
+          validation: (Rule) => { return Rule.required().min(5).max(20) },
         },
         {
           name: 'subtitle',
@@ -48,18 +49,21 @@ export default createSchema({
         {
           name: 'date',
           type: 'datetime',
-          title: 'Date'
+          title: 'Date',
+          validation: (Rule) => { return Rule.required() },
         },
         {
           name: 'author',
           type: 'reference',
           title: 'Author',
-          to: [{type: 'author'}]
+          to: [{type: 'author'}],
+          validation: Rule => Rule.required(),
         },
         {
           name: 'slug',
           type: 'slug',
           title: 'Slug',
+          validation: (Rule) => { return Rule.required().error('insert URL-Slug!') },
         }
       ],
     }
