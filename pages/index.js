@@ -9,7 +9,7 @@ import { getAllBlogs } from 'lib/api';
 import { BLOCKED_PAGES } from 'next/dist/shared/lib/constants';
 
 export default function Home({blogs}) {
-  // debugger
+  debugger
   return (
     <PageLayout>
         <AuthorIntro/>
@@ -22,6 +22,7 @@ export default function Home({blogs}) {
           { blogs.map(blog =>
             <Col key={blog.slug} md="4">
               <CardItem
+                author={blog.author}
                 title={blog.title}
                 subtitle={blog.subtitle}
                 date={blog.date}
