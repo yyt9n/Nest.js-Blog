@@ -9,7 +9,7 @@ import { getAllBlogs } from 'lib/api';
 import { BLOCKED_PAGES } from 'next/dist/shared/lib/constants';
 
 export default function Home({blogs}) {
-  debugger
+  // debugger
   return (
     <PageLayout>
         <AuthorIntro/>
@@ -27,6 +27,7 @@ export default function Home({blogs}) {
                 subtitle={blog.subtitle}
                 date={blog.date}
                 image={blog.coverImage}
+                slug={blog.slug}
               />
             </Col>
             )

@@ -1,6 +1,6 @@
 import { Card, Image } from 'react-bootstrap';
 
-const CardItem = ({title, subtitle, date, image, author}) => {
+const CardItem = ({title, subtitle, date, image, author, slug}) => {
     return (
         <Card className={`fj-card`}>
         <div className="card-body-wrapper">
@@ -28,7 +28,7 @@ const CardItem = ({title, subtitle, date, image, author}) => {
             <Card.Text>{subtitle}</Card.Text>
           </Card.Body>
         </div>
-        <a className="card-button">
+        <a href={`/blogs/${slug}`} className="card-button">
           Read More
         </a>
       </Card>
