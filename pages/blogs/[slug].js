@@ -20,10 +20,9 @@ export async function getStaticProps({params}) {
 
 export async function getStaticPaths() {
     const blogs = await getAllBlogs();
-    const paths = blogs?.map(blog => ({ params: { slug: blog.slug }}))
 
     return {
-        paths,
+        paths: blogs?.map(blog => ({ params: { slug: blog.slug }})),
         fallback: false,
     }
 }
