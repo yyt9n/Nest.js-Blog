@@ -1,6 +1,6 @@
 import PageLayout from 'components/PageLayout';
 import { useRouter } from 'next/router';
-import { getBlogBySlug } from 'lib/api';
+import { getAllBlogs, getBlogBySlug } from 'lib/api';
 
 const BlogDetail = ({blog}) => {
     return (
@@ -10,11 +10,21 @@ const BlogDetail = ({blog}) => {
     )
 }
 
-export async function getServerSideProps({params}) {
+export async function getStaticProps({params}) {
     const blog = await getBlogBySlug(params.slug);
 
     return {
         props: {blog},
+    }
+}
+
+export async function getStaticPaths() {
+    const blogs = await getAllBlogs();
+    const paths = blogs?.map(blog => ({ params: { slug: blog.slug }}))
+
+    return {
+        paths,
+        fallback: false,
     }
 }
 
