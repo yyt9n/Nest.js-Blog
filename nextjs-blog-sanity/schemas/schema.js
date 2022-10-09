@@ -47,6 +47,32 @@ export default createSchema({
           title: 'Cover Image',
         },
         {
+          name: 'content',
+          type: 'array',
+          title: 'Content',
+          of: [
+            {
+              type: 'block',
+            },
+            {
+              type: 'image',
+              fields: [
+                {
+                  type: 'text',
+                  name: 'alt',
+                  title: 'Description',
+                  options: {
+                    isHighlighted: true,
+                  }
+                }
+              ],
+              options: {
+                hotspot: true,
+              }
+            }
+          ]
+        },
+        {
           name: 'date',
           type: 'datetime',
           title: 'Date',
