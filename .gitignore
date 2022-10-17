@@ -38,5 +38,6 @@ next-env.d.ts
 # sanity studio app
 /nextjs-blog-sanity/config
 /nextjs-blog-sanity/node_modules
+/nextjs-blog-sanity/public
 /nextjs-blog-sanity/plugins
 /nextjs-blog-sanity/.eslintrc
